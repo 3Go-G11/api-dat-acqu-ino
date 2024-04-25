@@ -34,6 +34,7 @@
 var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
         contextoDht11Temperatura.canvas.width = 1000;
         contextoDht11Temperatura.canvas.height = 300;
+        
         var dht11Temperatura = new Chart(
             contextoDht11Temperatura,
             {
@@ -57,7 +58,7 @@ var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getCo
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Luminosidade'
+                                labelString: 'Temperatura'
                             },
                             ticks: {
                                 beginAtZero: true
@@ -74,6 +75,7 @@ var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getCo
         var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
         contextoDht11Umidade.canvas.width = 1000;
         contextoDht11Umidade.canvas.height = 300;
+
         var dht11Umidade = new Chart(
             contextoDht11Umidade,
             {

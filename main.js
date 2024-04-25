@@ -60,7 +60,6 @@ const serial = async (
         const valores = data.split(';');
         const dht11Temperatura = parseFloat(valores[1]);
         const dht11Umidade = parseFloat(valores[0]);
-        const fkSensor = 1;
 
         // Armazena os valores dos sensores nos arrays correspondentes
         valoresDht11Temperatura.push(dht11Temperatura);
@@ -71,8 +70,8 @@ const serial = async (
             // altere!
             // Este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                'INSERT INTO dados (fkSensor, dht11Temperatura, dht11Umidade) VALUES (?, ?, ?)',
-                [fkSensor, dht11Temperatura, dht11Umidade]
+                'INSERT INTO dados (dht11Temperatura, dht11Umidade) VALUES (?, ?)',
+                [dht11Temperatura, dht11Umidade]
             );
             console.log(`valores inseridos no banco: ${dht11Temperatura} + ${dht11Umidade}`)
         
